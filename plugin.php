@@ -19,7 +19,7 @@
 
 /**
  * Loading `WP_EXT_Resource`.
- * ------------------------------------------------------------------------------------------------------------------ */
+ */
 
 function run_wp_ext_resource() {
 	require_once( plugin_dir_path( __FILE__ ) . 'includes/WP_EXT_Resource.class.php' );

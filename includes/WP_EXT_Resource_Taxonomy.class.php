@@ -2,14 +2,12 @@
 
 /**
  * Class WP_EXT_Resource_Taxonomy
- * ------------------------------------------------------------------------------------------------------------------ */
-
+ */
 class WP_EXT_Resource_Taxonomy extends WP_EXT_Resource {
 
 	/**
 	 * Constructor.
-	 * -------------------------------------------------------------------------------------------------------------- */
-
+	 */
 	public function __construct() {
 		parent::__construct();
 
@@ -18,8 +16,7 @@ class WP_EXT_Resource_Taxonomy extends WP_EXT_Resource {
 
 	/**
 	 * Plugin: `initialize`.
-	 * -------------------------------------------------------------------------------------------------------------- */
-
+	 */
 	public function run() {
 		add_action( 'init', [ $this, 'taxonomy_meta' ], 0 );
 		add_action( 'init', [ $this, 'taxonomy_category' ], 0 );
@@ -30,8 +27,7 @@ class WP_EXT_Resource_Taxonomy extends WP_EXT_Resource {
 
 	/**
 	 * Taxonomy: `resource_meta`.
-	 * -------------------------------------------------------------------------------------------------------------- */
-
+	 */
 	public function taxonomy_meta() {
 		$labels  = [
 			'name'                       => _x( 'Resource Meta', 'Meta General Name', 'wp-ext-' . $this->domain_ID ),
@@ -77,8 +73,7 @@ class WP_EXT_Resource_Taxonomy extends WP_EXT_Resource {
 
 	/**
 	 * Taxonomy: `resource_category`.
-	 * -------------------------------------------------------------------------------------------------------------- */
-
+	 */
 	public function taxonomy_category() {
 		$labels  = [
 			'name'                       => _x( 'Resource Category', 'Category General Name', 'wp-ext-' . $this->domain_ID ),
@@ -122,8 +117,7 @@ class WP_EXT_Resource_Taxonomy extends WP_EXT_Resource {
 
 	/**
 	 * Taxonomy: `resource_type`.
-	 * -------------------------------------------------------------------------------------------------------------- */
-
+	 */
 	public function taxonomy_type() {
 		$labels  = [
 			'name'                       => _x( 'Resource Type', 'Type General Name', 'wp-ext-' . $this->domain_ID ),
@@ -167,8 +161,7 @@ class WP_EXT_Resource_Taxonomy extends WP_EXT_Resource {
 
 	/**
 	 * Taxonomy: `resource_language`.
-	 * -------------------------------------------------------------------------------------------------------------- */
-
+	 */
 	public function taxonomy_language() {
 		$labels  = [
 			'name'                       => _x( 'Resource Language', 'Language General Name', 'wp-ext-' . $this->domain_ID ),
@@ -212,8 +205,7 @@ class WP_EXT_Resource_Taxonomy extends WP_EXT_Resource {
 
 	/**
 	 * Taxonomy: `resource_status`.
-	 * -------------------------------------------------------------------------------------------------------------- */
-
+	 */
 	public function taxonomy_status() {
 		$labels  = [
 			'name'                       => _x( 'Resource Status', 'Status General Name', 'wp-ext-' . $this->domain_ID ),
@@ -260,8 +252,7 @@ class WP_EXT_Resource_Taxonomy extends WP_EXT_Resource {
  * Helper function to retrieve the static object without using globals.
  *
  * @return WP_EXT_Resource_Taxonomy
- * ------------------------------------------------------------------------------------------------------------------ */
-
+ */
 function WP_EXT_Resource_Taxonomy() {
 	static $object;
 
@@ -274,6 +265,5 @@ function WP_EXT_Resource_Taxonomy() {
 
 /**
  * Initialize the object on `plugins_loaded`.
- * ------------------------------------------------------------------------------------------------------------------ */
-
+ */
 add_action( 'plugins_loaded', [ WP_EXT_Resource_Taxonomy(), 'run' ] );
